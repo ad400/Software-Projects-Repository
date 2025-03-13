@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets Réservés</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div class="alldiv">
+        <button class="allbtn" id="dark"></button>
+        <button class="allbtn" id="blue"></button>
+        <button class="allbtn" id="red"></button>
+    </div>
+    <header>
+        <h1>Gestion Réservations</h1>
+        <p>Bienvenue dans notre système de gestion reservation</p>
+        <nav>
+            <ul>
+                <li><a href="tp1.html">Gestion des Clients</a></li>
+                <li><a href="tp2.html">Réserver un ticket</a></li>
+                <li><a href="#client_result">Tickets réservés</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form id="client_result">
+            <section>
+                <h3>Tickets Réservés</h3><br>
+                <table id="table_reservations">
+                    <thead>
+                        <tr>
+                            <th>Nom complet</th>
+                            <th>Ville</th>
+                            <th>Prix</th>
+                        </tr>
+                    </thead>
+                    <tbody id="addlign_reservations">
+                    </tbody>
+                </table>
+            </section>
+        </form>
+    </main>
+    <footer id="footer3">&copy;2025 OFPPT. Tous droits réservés.</footer>
+    <script src="tp3.js"></script>
+</body>
+</html>

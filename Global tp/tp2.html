@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réserver un Ticket</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="alldiv">
+      
+        <button class="allbtn" id="dark"></button>
+        <button class="allbtn" id="blue"></button>
+        <button class="allbtn" id="red"></button>
+     
+    </div>
+    <header>
+        <h1>Gestion Réservations</h1>
+        <p>Bienvenue dans notre système de gestion reservation</p>
+        <nav>
+            <ul>
+                <li><a href="tp1.html">Gestion des Clients</a></li>
+                <li><a href="#client_reservation">Réserver un ticket</a></li>
+                <li><a href="tp3.html">Tickets réservés</a></li>
+            </ul>
+        </nav>
+    </header>
+    <form id="client_reservation">
+        <section>
+            <h3>Réserver un Ticket</h3><br>
+            <label for="client"><p>Client:</p>
+                <input type="text" value="" id="client">
+                <span style="color: rgb(255, 1, 86);" class="erall" id="ERNOM"></span><br><br>
+            </label>
+            <label for="city">Ville de Destination:<br><br>
+                <select id="city" name="city" required>
+                    <option value="">--Select a city--</option>
+                    <option value="rabat">Rabat - 40 DH</option>
+                    <option value="mohammedia">Mohammedia - 20 DH</option>
+                    <option value="marrakech">Marrakech - 150 DH</option>
+                    <option value="tanger">Tanger - 290 DH</option>
+                </select>
+                <span style="color: rgb(255, 1, 86);" class="erall" id="ERCITY"></span><br><br>
+            </label>
+            <label for="etudiant"><p>Etudiant:</p>
+                <input type="radio" value="yes" name="chose" id="etudiant_yes"> yes 
+                <input type="radio" value="no" id="etudiant_no" name="chose"> no
+                <span style="color: rgb(255, 0, 60);" class="erall" id="ERcheck"></span><br><br>
+            </label>
+            <div class="prix">
+                <label>Prix Total:</label>
+                <span id="totprix">0 DH</span>
+            </div>
+            <button type="submit">Réserver</button>
+        </section>
+    </form>
+    <footer id="footer2">&copy;2025 OFPPT. Tous droits réservés.</footer>
+    <script src="tp2.js"></script>
+</body>
+</html>

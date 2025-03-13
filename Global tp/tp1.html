@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Clients et Réservations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="alldiv">
+        <button class="allbtn" id="dark"></button>
+        <button class="allbtn" id="blue"></button>
+        <button class="allbtn" id="red"></button>
+    </div>
+    <header>
+        <h1>Gestion Réservations</h1>
+        <p>Bienvenue dans notre système de gestion reservation</p>
+        <nav>
+            <ul>
+                <li><a href="#client_form">Gestion des Clients</a></li>
+                <li><a href="tp2.html">Réserver un ticket</a></li>
+                <li><a href="tp3.html">Tickets réservés</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form id="client_form">
+            <section>
+                <h3>Gestion des Clients</h3><br>
+                <label for="name"><p>Le nome complet:</p><input type="text" id="name"></label><span style="color: rgb(255, 1, 86);" class="erall" id="ERNOM"></span><br><br>
+                <label for="CIN"><p>Le CIN:</p><input type="text" id="CIN"></label><span style="color: rgb(255, 0, 81);" class="erall" id="ERCIN"></span><br><br>
+                <label for=""><p>étudiant:</p><input type="radio" value="yes" name="chose" id="etudiant">yes <input value="no" id="etudiant" type="radio" name="chose">no</label><span style="color: rgb(255, 0, 60);" class="erall" id="ERcheck"></span><br><br>
+                <button type="submit">Ajouter</button>
+                <table id="table">
+                    <thead>
+                        <tr>
+                            <th>Nom complet</th>
+                            <th>CIN</th>
+                            <th>Etudiant</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="addlign">
+                    </tbody>
+                </table>
+            </section>
+        </form>
+</main>
+<footer id="copyright">&copy;2025 OFPPT. Tous droits réservés.</footer>
+<script src="tp1.js"></script>
+</body>
+</html>
