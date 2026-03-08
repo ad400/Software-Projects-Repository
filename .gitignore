@@ -22,3 +22,8 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Local folders not part of Crayon
+/FORMPHPPROJECT
+/Global tp
+/dark and light mode
