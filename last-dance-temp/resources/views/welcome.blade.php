@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Fluency</title>
+    <title>Taskit</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -26,7 +26,8 @@
 
             {{-- left part --}}
             <div class="flex items-center gap-10">
-                <img src="{{ asset('storage/images/fluency_logo.png') }}" class="w-32" alt="Fluency Logo">
+                <img src="{{ asset('storage/images/blacklogo.png') }}" class="w-16 " alt="logo">
+              
             </div>
 
 
@@ -67,7 +68,7 @@
 
    <div class="flex justify-center   gap-36 flex-wrap lg:flex-nowrap" id="hero">    
         <div class="pt-10 w-full lg:w-auto">
-            <p class="bg-[#d5e1ff] text-center rounded-full py-2 px-4 w-[45vw] sm:w-[50%] md:w-[40%]">Welcome To Fluency</p>
+            <p class="bg-[#d5e1ff] text-center rounded-full py-2 px-4 w-[45vw] sm:w-[50%] md:w-[40%]">Welcome To Slogan </p>
             <h1 class="text-4xl sm:text-5xl lg:text-6xl pt-5 text-[#202023]">Boost Productivity</h1>
             <h1 class="text-4xl sm:text-5xl lg:text-6xl pt-2 text-[#202023]">Through <span class="italic border-[#ffd997] border-b-4">Effortless</span></h1>
             <h1 class="text-4xl sm:text-5xl lg:text-6xl pt-2 text-[#202023]">Team Management</h1>
@@ -202,7 +203,7 @@
      </div>
         
      <div class="bg-[#d5e0ff] h-[88vh] mb-10">
-          <h1 class="pt-16 ps-16 pb-16 text-5xl ">Ready To Boost <br> Productivity With Fluency?</h1>
+          <h1 class="pt-16 ps-16 pb-16 text-5xl ">Ready To Get Boost <br> Productivity WIth Slogan?</h1>
            <a href="#" class="bg-white rounded-full py-4 ps-5 ms-16 ">
             Contact Us 
             <i class="bi bi-arrow-right text-black bg-[#feda97] px-3 py-2 rounded-full ms-20 me-3"></i>
@@ -221,9 +222,10 @@
        
      <div class="flex justify-evenly pb-10 items-center">
             <div class="flex items-center text-xl">
-                <img src="{{ asset('storage/images/fluency_logo.png') }}" class="w-32" alt="Fluency Logo">
+                <img src="{{ asset('storage/images/blacklogo.png') }}" class="w-20 h-20 " alt="logo">
+    
             </div>
-            <div class="text-xl">Hello@fluency.com</div>
+            <div class="text-xl">Hello@Task.com</div>
      </div>
 
   <footer class="bg-white py-12 mx-20 border-t pb-10">
@@ -232,9 +234,9 @@
 
       <div class="flex flex-wrap justify-center text-center lg:text-left lg:justify-between">
         <div class="w-full lg:w-1/3 mb-6 lg:mb-0">
-          <h2 class="font-bold text-lg text-gray-800">Fluency</h2>
+          <h2 class="font-bold text-lg text-gray-800">Slogan</h2>
           <p class="text-gray-500 mt-4">
-            Fluency is a web-based platform designed to facilitate effective teamwork and collaboration among team members.
+            Slogan is a web-based platform designed to facilitate effective teamwork and collaboration among team members.
           </p>
           <button class="mt-4 px-4 py-2 bg-gray-800 text-white rounded-lg">Sign up</button>
         </div>
