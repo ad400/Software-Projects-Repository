@@ -236,7 +236,6 @@
           <p class="text-gray-500 mt-4">
             Fluency is a web-based platform designed to facilitate effective teamwork and collaboration among team members.
           </p>
-          <button class="mt-4 px-4 py-2 bg-gray-800 text-white rounded-lg">Sign up</button>
         </div>
         <div class="w-full lg:w-1/3 mb-6 ps-20 lg:mb-0">
           <h3 class="font-medium text-gray-800">Navigation</h3>
