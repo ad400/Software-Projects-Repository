@@ -1,7 +1,7 @@
 <nav class="shadow-sm shadow-gray-400 bg-[#1c1c1c] w-56  flex flex-col p-6 lg:w-56 lg:block hidden">
-    <div class="flex items-center justify-center mb-6 bg-white p-2 rounded-lg">
+    <div class="flex items-center justify-center mb-6">
         <img src="{{ asset('storage/images/fluency_logo_clean_final.png') }}" alt="Fluency Logo"
-            class="w-[160px] h-auto object-contain">
+            class="w-[160px] h-auto object-contain" style="filter: brightness(0) invert(1);">
     </div>
 
     <!-- Navigation Links -->
@@ -52,8 +52,8 @@
 <!-- Mobile Navigation -->
 <div class="lg:hidden bg-[#1c1c1c] shadow-sm shadow-gray-400 fixed top-0 left-0 w-full z-50">
     <div class="flex items-center justify-between p-4">
-        <div class="bg-white p-1 rounded-md">
-            <img src="{{ asset('storage/images/fluency_logo_clean_final.png') }}" alt="Fluency Logo" class="w-[120px]">
+        <div>
+            <img src="{{ asset('storage/images/fluency_logo_clean_final.png') }}" alt="Fluency Logo" class="w-[120px]" style="filter: brightness(0) invert(1);">
         </div>
         <button id="mobileMenuButton" class="text-white text-2xl focus:outline-none">
             <i class="fas fa-bars"></i>
