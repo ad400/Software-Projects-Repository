@@ -53,7 +53,7 @@
 <div class="lg:hidden bg-[#1c1c1c] shadow-sm shadow-gray-400 fixed top-0 left-0 w-full z-50">
     <div class="flex items-center justify-between p-4">
         <div>
-            <img src="{{ asset('storage/images/fluency_logo.png') }}" alt="Fluency Logo" class="w-[120px]">
+            <img src="{{ asset('storage/images/fluency_logo_white.png') }}" alt="Fluency Logo" class="w-[120px]">
         </div>
         <button id="mobileMenuButton" class="text-white text-2xl focus:outline-none">
             <i class="fas fa-bars"></i>
