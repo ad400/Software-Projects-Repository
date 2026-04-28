@@ -11,6 +11,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/glass-demo', function () {
+    return view('glass_landing');
+});
+
 Route::get('/dashboard', [TeamController::class , 'index2'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
