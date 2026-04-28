@@ -1,7 +1,7 @@
 <nav class="shadow-sm shadow-gray-400 bg-[#1c1c1c] w-56  flex flex-col p-6 lg:w-56 lg:block hidden">
     <div class="flex items-center justify-center mb-6">
-        <img src="{{ asset('storage/images/fluency_logo.png') }}" alt="Fluency Logo"
-            class="w-[160px] h-[100px] object-contain">
+        <img src="{{ asset('storage/images/fluency_logo_white.png') }}" alt="Fluency Logo"
+            class="w-[160px] h-auto object-contain">
     </div>
 
     <!-- Navigation Links -->

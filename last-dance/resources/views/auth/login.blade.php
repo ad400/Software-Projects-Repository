@@ -11,8 +11,8 @@
     <div class="bg-white w-full md:w-[60vw] h-auto flex flex-col md:flex-row rounded-xl overflow-hidden shadow-2xl ">
         <!-- Left Part (Form) -->
         <div class="w-full md:w-1/2 bg-black flex flex-col justify-center items-center p-8 md:p-12">
-            <div class="mb-8 bg-white p-2 rounded-lg">
-                <img src="{{ asset('storage/images/fluency_logo.png') }}" alt="Fluency Logo" class="w-40">
+            <div class="mb-8">
+                <img src="{{ asset('storage/images/fluency_logo_white.png') }}" alt="Fluency Logo" class="w-40">
             </div>
             
             <x-auth-session-status class="mb-4" :status="session('status')" />
