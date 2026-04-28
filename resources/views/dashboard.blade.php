@@ -83,7 +83,7 @@
                 <!-- Statistics Section -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
                     <div class=" shadow-md shadow-gray-400 p-6 rounded-lg ">
-                        <h3 class="text-xl font-bold ">Total Tasks</h3>
+                        <h3 class="text-xl font-bold  ">Total Tasks</h3>
                         <p class="text-3xl font-bold text-blue-500">{{ $allTasks }} </p>
                         <p class="text-sm ">All tasks in the system.</p>
                     </div>

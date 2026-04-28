@@ -56,7 +56,6 @@ class TaskController extends Controller
      */
     public function create()
     {
-        //
         $user = auth()->user();
         $events =Task::where('creator_id', $user->id)->get();
 
@@ -66,7 +65,7 @@ class TaskController extends Controller
                 "id" => $e->id,
                 "start" => $e->start,
                 "end" => $e->end,
-                "owner" => $e->user_id,
+                "ownjer" => $e->user_id,
                 "color" => "#1c1c1c",
                 "passed" => false,
                 "title" => "Course : $e->name",

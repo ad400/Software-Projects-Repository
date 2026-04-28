@@ -26,5 +26,6 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('destroy-task', function (User $user, Task $task) {
             return $user->id === $task->creator_id;
         });
+        
     }
 }
