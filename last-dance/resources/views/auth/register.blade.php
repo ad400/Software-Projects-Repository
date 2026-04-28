@@ -85,9 +85,9 @@
                     0 10px 10px rgba(0,0,0,0.22);
             position: relative;
             overflow: hidden;
-            width: 850px;
-            max-width: 100%;
-            min-height: 600px;
+            width: 768px;
+            max-width: 95%;
+            min-height: 520px;
         }
 
         .form-container {
