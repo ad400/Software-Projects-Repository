@@ -3,7 +3,7 @@
         
         <!-- Logo -->
         <div class="flex items-center space-x-2">
-            <img src="{{ asset('storage/images/fluency_logo_final.png') }}" alt="Fluency Logo" class="w-12 h-12 object-contain">
+            <img src="{{ asset('storage/images/fluency_logo_transparent_final.png') }}" alt="Fluency Logo" class="w-12 h-12 object-contain">
         </div>
         
         <!-- Search Input -->
