@@ -233,7 +233,6 @@
     <div class="form-container sign-up-container">
         <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
             @csrf
-            <h1 class="mb-4">Create Account</h1>
             <img src="{{ asset('storage/images/fluency_logo_clean_final.png') }}" alt="Fluency" class="w-32 mb-4">
             
             <input type="text" name="name" placeholder="Name" value="{{ old('name') }}" required />
@@ -260,7 +259,6 @@
     <div class="form-container sign-in-container">
         <form method="POST" action="{{ route('login') }}">
             @csrf
-            <h1 class="mb-4">Sign In</h1>
             <img src="{{ asset('storage/images/fluency_logo_clean_final.png') }}" alt="Fluency" class="w-32 mb-4">
             
             <div class="social-container">
