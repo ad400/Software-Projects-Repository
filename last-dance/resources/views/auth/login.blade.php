@@ -12,7 +12,7 @@
         <!-- Left Part (Form) -->
         <div class="w-full md:w-1/2 bg-black flex flex-col justify-center items-center p-8 md:p-12">
             <div class="mb-8">
-                <img src="{{ asset('storage/images/fluency_logo_white.png') }}" alt="Fluency Logo" class="w-40">
+                <img src="{{ asset('storage/images/fluency_logo_white.png') }}" alt="Fluency Logo" class="w-40" style="mix-blend-mode: screen;">
             </div>
             
             <x-auth-session-status class="mb-4" :status="session('status')" />
