@@ -88,12 +88,21 @@
         }
 
         input {
-            background-color: #eee;
-            border: none;
+            background-color: #f9f9f9;
+            border: 1px solid #e1e1e1;
             padding: 12px 15px;
             margin: 8px 0;
             width: 100%;
             border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            background-color: #ffffff;
+            border-color: #1c1c1c;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
         }
 
         .container {
