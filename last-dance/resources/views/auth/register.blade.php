@@ -259,8 +259,6 @@
                         reader.readAsDataURL($refs.photo.files[0]);
                     ">
 
-                <label class="block text-xs font-semibold text-gray-500 mb-2">Add your profile</label>
-
                 <!-- Preview -->
                 <div x-show="photoPreview" style="display:none;" class="mb-2 flex justify-center">
                     <span class="block w-14 h-14 rounded-full bg-cover bg-no-repeat bg-center border-2 border-[#1c1c1c]"
