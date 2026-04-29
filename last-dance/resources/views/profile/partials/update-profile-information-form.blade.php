@@ -19,10 +19,11 @@
 
         <!-- Profile Image -->
         <div x-data="{ photoName: null, photoPreview: null }" class="col-span-6 sm:col-span-4">
-            <!-- Profile Photo File Input -->
+            <!-- Hidden File Input -->
             <input type="file" class="hidden"
                         x-ref="photo"
                         name="image"
+                        accept="image/*"
                         x-on:change="
                                 photoName = $refs.photo.files[0].name;
                                 const reader = new FileReader();
@@ -32,29 +33,43 @@
                                 reader.readAsDataURL($refs.photo.files[0]);
                         ">
 
-            <x-input-label for="photo" value="{{ __('Photo') }}" />
+            <label class="block text-sm font-semibold text-gray-700 mb-2">Add your profile</label>
 
-            <!-- Current Profile Photo -->
-            <div class="mt-2" x-show="! photoPreview">
-                <img src="{{ $user->image ? asset('storage/' . $user->image) : 'https://ui-avatars.com/api/?name=' . urlencode($user->name) . '&color=7F9CF5&background=EBF4FF' }}" 
-                     alt="{{ $user->name }}" 
-                     class="rounded-full h-20 w-20 object-cover shadow-lg border-2 border-gray-200">
+            <!-- Upload Zone -->
+            <div 
+                class="mt-1 flex items-center gap-4 px-4 py-3 bg-[#151516] border border-gray-700 rounded-lg cursor-pointer hover:border-blue-500 transition duration-200"
+                x-on:click="$refs.photo.click()">
+
+                <!-- Avatar Preview or Default Icon -->
+                <div class="flex-shrink-0">
+                    <div x-show="! photoPreview">
+                        <img src="{{ $user->image ? asset('storage/' . $user->image) : 'https://ui-avatars.com/api/?name=' . urlencode($user->name) . '&color=7F9CF5&background=2d2d2d' }}" 
+                             alt="{{ $user->name }}" 
+                             class="w-12 h-12 rounded-full object-cover border-2 border-gray-600">
+                    </div>
+                    <div x-show="photoPreview" style="display: none;">
+                        <span class="block w-12 h-12 rounded-full bg-cover bg-no-repeat bg-center border-2 border-blue-500"
+                              x-bind:style="'background-image: url(\'' + photoPreview + '\');'">
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Text -->
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm text-gray-400" x-show="! photoName">Click to upload a photo</p>
+                    <p class="text-sm text-blue-400 truncate" x-show="photoName" x-text="photoName"></p>
+                    <p class="text-xs text-gray-600 mt-0.5">PNG, JPG, GIF up to 2MB</p>
+                </div>
+
+                <!-- Upload Icon -->
+                <div class="flex-shrink-0">
+                    <i class="fas fa-camera text-gray-500 hover:text-blue-400 transition"></i>
+                </div>
             </div>
-
-            <!-- New Profile Photo Preview -->
-            <div class="mt-2" x-show="photoPreview" style="display: none;">
-                <span class="block rounded-full w-20 h-20 bg-cover bg-no-repeat bg-center shadow-lg border-2 border-blue-500"
-                      x-bind:style="'background-image: url(\'' + photoPreview + '\');'">
-                </span>
-            </div>
-
-            <button type="button" class="mt-2 inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:ring focus:ring-blue-200 active:text-gray-800 active:bg-gray-50 disabled:opacity-25 transition" 
-                    x-on:click.prevent="$refs.photo.click()">
-                {{ __('Select A New Photo') }}
-            </button>
 
             <x-input-error class="mt-2" :messages="$errors->get('image')" />
         </div>
+
 
         <!-- Name Input -->
         <div>
