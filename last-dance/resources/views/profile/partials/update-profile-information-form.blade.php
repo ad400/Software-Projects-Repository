@@ -33,39 +33,27 @@
                                 reader.readAsDataURL($refs.photo.files[0]);
                         ">
 
-            <label class="block text-sm font-semibold text-gray-700 mb-2">Add your profile</label>
-
-            <!-- Upload Zone -->
-            <div 
-                class="mt-1 flex items-center gap-4 px-4 py-3 bg-[#151516] border border-gray-700 rounded-lg cursor-pointer hover:border-blue-500 transition duration-200"
-                x-on:click="$refs.photo.click()">
-
-                <!-- Avatar Preview or Default Icon -->
-                <div class="flex-shrink-0">
-                    <div x-show="! photoPreview">
-                        <img src="{{ $user->image ? asset('storage/' . $user->image) : 'https://ui-avatars.com/api/?name=' . urlencode($user->name) . '&color=7F9CF5&background=2d2d2d' }}" 
-                             alt="{{ $user->name }}" 
-                             class="w-12 h-12 rounded-full object-cover border-2 border-gray-600">
-                    </div>
-                    <div x-show="photoPreview" style="display: none;">
-                        <span class="block w-12 h-12 rounded-full bg-cover bg-no-repeat bg-center border-2 border-blue-500"
-                              x-bind:style="'background-image: url(\'' + photoPreview + '\');'">
-                        </span>
-                    </div>
+            <!-- Current Photo or Preview -->
+            <div class="mb-2 flex">
+                <div x-show="! photoPreview">
+                    <img src="{{ $user->image ? asset('storage/' . $user->image) : 'https://ui-avatars.com/api/?name=' . urlencode($user->name) . '&color=7F9CF5&background=EBF4FF' }}"
+                         alt="{{ $user->name }}"
+                         class="w-14 h-14 rounded-full object-cover border-2 border-gray-300 shadow">
                 </div>
-
-                <!-- Text -->
-                <div class="flex-1 min-w-0">
-                    <p class="text-sm text-gray-400" x-show="! photoName">Click to upload a photo</p>
-                    <p class="text-sm text-blue-400 truncate" x-show="photoName" x-text="photoName"></p>
-                    <p class="text-xs text-gray-600 mt-0.5">PNG, JPG, GIF up to 2MB</p>
-                </div>
-
-                <!-- Upload Icon -->
-                <div class="flex-shrink-0">
-                    <i class="fas fa-camera text-gray-500 hover:text-blue-400 transition"></i>
+                <div x-show="photoPreview" style="display: none;">
+                    <span class="block w-14 h-14 rounded-full bg-cover bg-no-repeat bg-center border-2 border-gray-700 shadow"
+                          x-bind:style="'background-image: url(\'' + photoPreview + '\');'">
+                    </span>
                 </div>
             </div>
+
+            <!-- Button -->
+            <button type="button"
+                x-on:click.prevent="$refs.photo.click()"
+                class="inline-flex items-center justify-center px-4 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:bg-gray-50 hover:border-gray-400 focus:outline-none transition duration-200">
+                <span x-show="! photoName">{{ __('Select A New Photo') }}</span>
+                <span x-show="photoName" x-text="photoName" class="truncate max-w-[180px]"></span>
+            </button>
 
             <x-input-error class="mt-2" :messages="$errors->get('image')" />
         </div>
