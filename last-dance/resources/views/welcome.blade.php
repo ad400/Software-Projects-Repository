@@ -26,7 +26,7 @@
 
             {{-- left part --}}
             <div class="flex items-center gap-10">
-                <img src="{{ asset('storage/images/fluency_logo.png') }}" class="w-32" alt="Fluency Logo">
+                <img src="{{ asset('storage/images/image-removebg-preview.png') }}" class="w-32" alt="Fluency Logo">
             </div>
 
 
@@ -221,7 +221,7 @@
        
      <div class="flex justify-evenly pb-10 items-center">
             <div class="flex items-center text-xl">
-                <img src="{{ asset('storage/images/fluency_logo.png') }}" class="w-32" alt="Fluency Logo">
+                <img src="{{ asset('storage/images/image-removebg-preview.png') }}" class="w-32" alt="Fluency Logo">
             </div>
             <div class="text-xl">Hello@fluency.com</div>
      </div>

@@ -1,9 +1,1 @@
-<?php
-$users = App\Models\User::whereNotNull('image')->get();
-foreach($users as $user) {
-    if (strpos($user->image, '/') === false) {
-        $user->image = 'images/' . $user->image;
-        $user->save();
-    }
-}
-echo "Done fixing images.";
+foreach(App\Models\User::all() as \) { if(\->image && strpos(\->image, '/') === false) { \->image = 'images/' . \->image; \->save(); } }
