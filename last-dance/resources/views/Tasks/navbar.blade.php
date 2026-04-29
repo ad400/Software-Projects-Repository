@@ -3,7 +3,7 @@
         
         <!-- Logo -->
         <div class="flex items-center space-x-2">
-            <img src="{{ asset('storage/images/fluency_logo_black.png') }}" alt="Fluency Logo" class="w-12 h-12 object-contain">
+            <img src="{{ asset('images/fluency_logo_clean_final.png') }}" alt="Fluency Logo" class="w-12 h-12 object-contain">
         </div>
         
         <!-- Search Input -->
@@ -22,14 +22,20 @@
 
         <!-- User Profile -->
         <div class="flex items-center space-x-4">
+            @php
+                $authUser = Auth::user();
+                $profileImage = $authUser->image
+                    ? asset('storage/' . (str_contains($authUser->image, '/') ? $authUser->image : 'images/' . $authUser->image))
+                    : 'https://ui-avatars.com/api/?name=' . urlencode($authUser->name) . '&color=7F9CF5&background=EBF4FF';
+            @endphp
             <div class="relative">
-                <img id="profile-image" class="w-10 h-10 rounded-full border border-black border-2 cursor-pointer object-cover"
-                    src="{{ Auth::user()->image ? asset('storage/' . Auth::user()->image) : 'https://ui-avatars.com/api/?name=' . urlencode(Auth::user()->name) . '&color=7F9CF5&background=EBF4FF' }}" 
-                    alt="{{ Auth::user()->name }}">
+                <img id="profile-image" class="w-12 h-12 rounded-full border-2 border-black cursor-pointer object-cover object-center"
+                    src="{{ $profileImage }}"
+                    alt="{{ $authUser->name }}">
                 <span class="absolute top-0 right-0 w-3 h-3 bg-blue-500 border-2 border-white rounded-full"></span>
             </div>
             <div class="text-gray-700">
-                <span class="text-sm font-medium">{{ Auth::user()->name }}</span>
+                <span class="text-sm font-medium">{{ $authUser->name }}</span>
             </div>
         </div>
 

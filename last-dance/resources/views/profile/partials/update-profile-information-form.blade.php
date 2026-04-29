@@ -19,6 +19,11 @@
 
         <!-- Profile Image -->
         <div x-data="{ photoName: null, photoPreview: null }" class="col-span-6 sm:col-span-4">
+            @php
+                $profileImage = $user->image
+                    ? asset('storage/' . (str_contains($user->image, '/') ? $user->image : 'images/' . $user->image))
+                    : 'https://ui-avatars.com/api/?name=' . urlencode($user->name) . '&color=7F9CF5&background=2d2d2d';
+            @endphp
             <!-- Hidden File Input -->
             <input type="file" class="hidden"
                         x-ref="photo"
@@ -43,12 +48,12 @@
                 <!-- Avatar Preview or Default Icon -->
                 <div class="flex-shrink-0">
                     <div x-show="! photoPreview">
-                        <img src="{{ $user->image ? asset('storage/' . $user->image) : 'https://ui-avatars.com/api/?name=' . urlencode($user->name) . '&color=7F9CF5&background=2d2d2d' }}" 
+                        <img src="{{ $profileImage }}"
                              alt="{{ $user->name }}" 
-                             class="w-12 h-12 rounded-full object-cover border-2 border-gray-600">
+                             class="w-16 h-16 rounded-full object-cover object-center border-2 border-gray-600">
                     </div>
                     <div x-show="photoPreview" style="display: none;">
-                        <span class="block w-12 h-12 rounded-full bg-cover bg-no-repeat bg-center border-2 border-blue-500"
+                        <span class="block w-16 h-16 rounded-full bg-cover bg-no-repeat bg-center border-2 border-blue-500"
                               x-bind:style="'background-image: url(\'' + photoPreview + '\');'">
                         </span>
                     </div>

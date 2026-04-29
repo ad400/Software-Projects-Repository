@@ -147,9 +147,9 @@
                     <h3 class="text-xl font-semibold text-gray-100">User Information</h3>
                     <div class="flex items-center mt-4">
                         <div
-                            class="w-12 h-12 bg-gray-300 rounded-full flex justify-center items-center text-white text-2xl">
-                            <img id="profile-image" class="w-10 h-10 rounded-full cursor-pointer"
-                                src="{{ asset('storage/images/' . $user->image) }}" alt="Profile Image">
+                            class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden flex justify-center items-center text-white text-2xl">
+                            <img id="profile-image" class="w-full h-full rounded-full cursor-pointer object-cover object-center"
+                                src="{{ $user->image ? asset('storage/' . (str_contains($user->image, '/') ? $user->image : 'images/' . $user->image)) : 'https://ui-avatars.com/api/?name=' . urlencode($user->name) . '&color=7F9CF5&background=EBF4FF' }}" alt="Profile Image">
 
                         </div>
                         <div class="ml-4">

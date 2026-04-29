@@ -233,7 +233,7 @@
     <div class="form-container sign-up-container">
         <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
             @csrf
-            <img src="{{ asset('storage/images/fluency_logo_black.png') }}" alt="Fluency" class="w-32 mb-4">
+            <img src="{{ asset('images/fluency_logo_clean_final.png') }}" alt="Fluency" class="w-32 mb-4">
             
             <input type="text" name="name" placeholder="Name" value="{{ old('name') }}" required />
             <x-input-error :messages="$errors->get('name')" class="mt-1" />
@@ -259,8 +259,6 @@
                         reader.readAsDataURL($refs.photo.files[0]);
                     ">
 
-                <label class="block text-xs font-semibold text-gray-500 mb-2">Add your profile</label>
-
                 <!-- Preview -->
                 <div x-show="photoPreview" style="display:none;" class="mb-2 flex justify-center">
                     <span class="block w-14 h-14 rounded-full bg-cover bg-no-repeat bg-center border-2 border-[#1c1c1c]"
@@ -284,7 +282,7 @@
     <div class="form-container sign-in-container">
         <form method="POST" action="{{ route('login') }}">
             @csrf
-            <img src="{{ asset('storage/images/fluency_logo_black.png') }}" alt="Fluency" class="w-32 mb-4">
+            <img src="{{ asset('images/fluency_logo_clean_final.png') }}" alt="Fluency" class="w-32 mb-4">
             
             <div class="social-container">
                 <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>

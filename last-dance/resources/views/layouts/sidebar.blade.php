@@ -1,37 +1,37 @@
 <nav class="shadow-sm shadow-gray-400 bg-[#1c1c1c] w-56  flex flex-col p-6 lg:w-56 lg:block hidden">
     <div class="flex items-center justify-center mb-6">
-        <img src="{{ asset('storage/images/fluency_logo_black.png') }}" alt="Fluency Logo"
+        <img src="{{ asset('images/fluency_logo_clean_final.png') }}" alt="Fluency Logo"
             class="w-[160px] h-auto object-contain" style="filter: brightness(0) invert(1);">
     </div>
 
     <!-- Navigation Links -->
     <div class="flex-1 space-y-4">
-        <a href="{{ route('dashboard') }}" class="flex items-center space-x-3 p-3 rounded-lg bg-white text-black shadow-md transition duration-300">
+        <a href="{{ route('dashboard') }}" class="flex items-center space-x-3 p-3 rounded-lg shadow-md transition duration-300 {{ request()->routeIs('dashboard') ? 'bg-white text-black' : 'text-white hover:bg-white hover:text-black' }}">
             <i class="fas fa-th-large "></i>
             <span class="font-semibold">Dashboard</span>
         </a>
 
-        <a href="{{ route('team.index') }}" class="flex items-center space-x-3 p-3 rounded-lg text-white hover:bg-white hover:text-black transition duration-300">
+        <a href="{{ route('team.index') }}" class="flex items-center space-x-3 p-3 rounded-lg transition duration-300 {{ request()->routeIs('team.*') || request()->routeIs('team.members') ? 'bg-white text-black' : 'text-white hover:bg-white hover:text-black' }}">
             <i class="fas fa-users"></i>
             <span class="font-semibold">Teams</span>
         </a>
 
-        <a href="{{ route('calender.index') }}" class="flex items-center space-x-3 p-3 rounded-lg text-white hover:bg-white hover:text-black transition duration-300">
+        <a href="{{ route('calender.index') }}" class="flex items-center space-x-3 p-3 rounded-lg transition duration-300 {{ request()->routeIs('calender.index') || request()->routeIs('task.calender') ? 'bg-white text-black' : 'text-white hover:bg-white hover:text-black' }}">
             <i class="fas fa-calendar-alt"></i>
             <span class="font-semibold">Calendar</span>
         </a>
 
-        <a href="{{ route('teamCal') }}" class="flex items-center space-x-3 p-3 rounded-lg text-white hover:bg-white hover:text-black transition duration-300">
+        <a href="{{ route('teamCal') }}" class="flex items-center space-x-3 p-3 rounded-lg transition duration-300 {{ request()->routeIs('teamCal') || request()->routeIs('team.calender') ? 'bg-white text-black' : 'text-white hover:bg-white hover:text-black' }}">
             <i class="fas fa-calendar-alt"></i>
             <span class="font-semibold">Team Calendar</span>
         </a>
 
-        <a href="{{ route('tasks.todo') }}" class="flex items-center space-x-3 p-3 rounded-lg text-white hover:bg-white hover:text-black transition duration-300">
+        <a href="{{ route('tasks.todo') }}" class="flex items-center space-x-3 p-3 rounded-lg transition duration-300 {{ request()->routeIs('tasks.todo') ? 'bg-white text-black' : 'text-white hover:bg-white hover:text-black' }}">
             <i class="fas fa-list-ul"></i>
             <span class="font-semibold">To-Do</span>
         </a>
         
-        <a href="{{ route('profile.edit') }}" class="flex items-center space-x-3 p-3 rounded-lg text-white hover:bg-white hover:text-black transition duration-300">
+        <a href="{{ route('profile.edit') }}" class="flex items-center space-x-3 p-3 rounded-lg transition duration-300 {{ request()->routeIs('profile.*') ? 'bg-white text-black' : 'text-white hover:bg-white hover:text-black' }}">
             <i class="fas fa-cog"></i>
             <span class="font-semibold">Settings</span>
         </a>
@@ -53,7 +53,7 @@
 <div class="lg:hidden bg-[#1c1c1c] shadow-sm shadow-gray-400 fixed top-0 left-0 w-full z-50">
     <div class="flex items-center justify-between p-4">
         <div>
-            <img src="{{ asset('storage/images/fluency_logo_black.png') }}" alt="Fluency Logo" class="w-[120px]" style="filter: brightness(0) invert(1);">
+            <img src="{{ asset('images/fluency_logo_clean_final.png') }}" alt="Fluency Logo" class="w-[120px]" style="filter: brightness(0) invert(1);">
         </div>
         <button id="mobileMenuButton" class="text-white text-2xl focus:outline-none">
             <i class="fas fa-bars"></i>
