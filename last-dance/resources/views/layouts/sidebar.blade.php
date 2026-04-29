@@ -3,15 +3,6 @@
         <img src="{{ asset('storage/images/fluency_logo_clean_final.png') }}" alt="Fluency Logo"
             class="w-[160px] h-auto object-contain" style="filter: brightness(0) invert(1);">
     </div>
-    
-    <!-- User Profile Section -->
-    <div class="flex flex-col items-center mb-8 pb-6 border-b border-gray-700">
-        <img src="{{ Auth::user()->image ? asset('storage/' . Auth::user()->image) : 'https://ui-avatars.com/api/?name=' . urlencode(Auth::user()->name) . '&color=7F9CF5&background=EBF4FF' }}" 
-             alt="{{ Auth::user()->name }}" 
-             class="w-20 h-20 rounded-full object-cover border-2 border-blue-500 mb-3 shadow-lg">
-        <h3 class="text-white font-bold text-lg">{{ Auth::user()->name }}</h3>
-        <p class="text-gray-400 text-xs">{{ Auth::user()->email }}</p>
-    </div>
 
     <!-- Navigation Links -->
     <div class="flex-1 space-y-4">
