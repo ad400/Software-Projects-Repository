@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <title>Create Task</title>
+    <title>{{ __('app.create_task') }}</title>
     <style>
         body.overflow-hidden {
             overflow: hidden;
@@ -36,7 +36,7 @@
             </button>
 
             <!-- Modal Heading -->
-            <h2 class="text-2xl font-bold text-center text-blue-400 mb-6">Create a New Task</h2>
+            <h2 class="text-2xl font-bold text-center text-blue-400 mb-6">{{ __('app.create_new_task') }}</h2>
 
             <!-- Form for Creating a Task -->
             <form action="{{ route('task.store') }}" method="POST">
@@ -44,10 +44,10 @@
 
                 <!-- Task Name -->
                 <div class="mb-4">
-                    <label for="name" class="block text-sm font-medium text-gray-400 mb-1">Task Name</label>
+                    <label for="name" class="block text-sm font-medium text-gray-400 mb-1">{{ __('app.task_name') }}</label>
                     <input type="text" name="name" id="name"
                         class="w-full px-4 py-3 border border-gray-600 bg-gray-900 text-gray-200 rounded-md shadow-sm focus:ring-blue-400 focus:border-blue-400"
-                        placeholder="Enter task name" required value="{{ old('name') }}">
+                        placeholder="{{ __('app.enter_task_name') }}" required value="{{ old('name') }}">
                     @error('name')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                     @enderror
@@ -56,10 +56,10 @@
                 <!-- Description -->
                 <!-- Description -->
                 <div class="mb-4">
-                    <label for="description" class="block text-sm font-medium text-gray-400 mb-1">Description</label>
+                    <label for="description" class="block text-sm font-medium text-gray-400 mb-1">{{ __('app.description') }}</label>
                     <textarea name="description" id="description" rows="4"
                         class="w-full px-4 py-3 border border-gray-600 bg-gray-900 text-gray-200 rounded-md shadow-sm focus:ring-blue-400 focus:border-blue-400"
-                        placeholder="Enter task description">{{ old('description') }}</textarea>
+                        placeholder="{{ __('app.enter_task_description') }}">{{ old('description') }}</textarea>
                     @error('description')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                     @enderror
@@ -69,7 +69,7 @@
                 <div class="mb-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <!-- Date Start -->
                     <div>
-                        <label for="start" class="block text-sm font-medium text-gray-400 mb-1">Date Start</label>
+                        <label for="start" class="block text-sm font-medium text-gray-400 mb-1">{{ __('app.date_start') }}</label>
                         <input type="datetime-local" id="start" name="start" min="{{ date('Y-m-d\TH:i') }}"
                             class="w-full px-4 py-3 border border-gray-600 bg-gray-900 text-gray-200 rounded-md shadow-sm focus:ring-blue-400 focus:border-blue-400"
                             required>
@@ -80,7 +80,7 @@
 
                     <!-- Date End -->
                     <div>
-                        <label for="end" class="block text-sm font-medium text-gray-400 mb-1">Date End</label>
+                        <label for="end" class="block text-sm font-medium text-gray-400 mb-1">{{ __('app.date_end') }}</label>
                         <input type="datetime-local" id="end" name="end" min="{{ date('Y-m-d\TH:i') }}"
                             class="w-full px-4 py-3 border border-gray-600 bg-gray-900 text-gray-200 rounded-md shadow-sm focus:ring-blue-400 focus:border-blue-400"
                             required>
@@ -93,12 +93,12 @@
 
                 <!-- Priority -->
                 <div class="mb-4">
-                    <label for="priority" class="block text-sm font-medium text-gray-400 mb-1">Priority</label>
+                    <label for="priority" class="block text-sm font-medium text-gray-400 mb-1">{{ __('app.priority') }}</label>
                     <select name="priority" id="priority"
                         class="w-full px-4 py-3 border border-gray-600 bg-gray-900 text-gray-200 rounded-md shadow-sm focus:ring-blue-400 focus:border-blue-400">
-                        <option value="High" {{ old('priority') == 'High' ? 'selected' : '' }}>High</option>
-                        <option value="Medium" {{ old('priority') == 'Medium' ? 'selected' : '' }}>Medium</option>
-                        <option value="Low" {{ old('priority') == 'Low' ? 'selected' : '' }}>Low</option>
+                        <option value="High" {{ old('priority') == 'High' ? 'selected' : '' }}>{{ __('app.high') }}</option>
+                        <option value="Medium" {{ old('priority') == 'Medium' ? 'selected' : '' }}>{{ __('app.medium') }}</option>
+                        <option value="Low" {{ old('priority') == 'Low' ? 'selected' : '' }}>{{ __('app.low') }}</option>
                     </select>
                     @error('priority')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>

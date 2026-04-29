@@ -1,39 +1,44 @@
 <nav class="shadow-sm shadow-gray-400 bg-[#1c1c1c] w-56  flex flex-col p-6 lg:w-56 lg:block hidden">
     <div class="flex items-center justify-center mb-6">
-        <img src="{{ asset('images/fluency_logo_clean_final.png') }}" alt="Fluency Logo"
+        <img src="{{ asset('images/fluency_logo_clean_final.png') }}" alt="{{ __('app.fluency') }}"
             class="w-[160px] h-auto object-contain" style="filter: brightness(0) invert(1);">
+    </div>
+    <div class="mb-6 flex justify-center gap-2 text-sm font-semibold text-gray-300">
+        <a href="{{ route('lang.switch', 'en') }}" class="{{ app()->getLocale() === 'en' ? 'text-white underline' : 'hover:text-white' }}">EN</a>
+        <span>|</span>
+        <a href="{{ route('lang.switch', 'fr') }}" class="{{ app()->getLocale() === 'fr' ? 'text-white underline' : 'hover:text-white' }}">FR</a>
     </div>
 
     <!-- Navigation Links -->
     <div class="flex-1 space-y-4">
         <a href="{{ route('dashboard') }}" class="flex items-center space-x-3 p-3 rounded-lg shadow-md transition duration-300 {{ request()->routeIs('dashboard') ? 'bg-white text-black' : 'text-white hover:bg-white hover:text-black' }}">
             <i class="fas fa-th-large "></i>
-            <span class="font-semibold">Dashboard</span>
+            <span class="font-semibold">{{ __('app.dashboard') }}</span>
         </a>
 
         <a href="{{ route('team.index') }}" class="flex items-center space-x-3 p-3 rounded-lg transition duration-300 {{ request()->routeIs('team.*') || request()->routeIs('team.members') ? 'bg-white text-black' : 'text-white hover:bg-white hover:text-black' }}">
             <i class="fas fa-users"></i>
-            <span class="font-semibold">Teams</span>
+            <span class="font-semibold">{{ __('app.teams') }}</span>
         </a>
 
         <a href="{{ route('calender.index') }}" class="flex items-center space-x-3 p-3 rounded-lg transition duration-300 {{ request()->routeIs('calender.index') || request()->routeIs('task.calender') ? 'bg-white text-black' : 'text-white hover:bg-white hover:text-black' }}">
             <i class="fas fa-calendar-alt"></i>
-            <span class="font-semibold">Calendar</span>
+            <span class="font-semibold">{{ __('app.calendar') }}</span>
         </a>
 
         <a href="{{ route('teamCal') }}" class="flex items-center space-x-3 p-3 rounded-lg transition duration-300 {{ request()->routeIs('teamCal') || request()->routeIs('team.calender') ? 'bg-white text-black' : 'text-white hover:bg-white hover:text-black' }}">
             <i class="fas fa-calendar-alt"></i>
-            <span class="font-semibold">Team Calendar</span>
+            <span class="font-semibold">{{ __('app.team_calendar') }}</span>
         </a>
 
         <a href="{{ route('tasks.todo') }}" class="flex items-center space-x-3 p-3 rounded-lg transition duration-300 {{ request()->routeIs('tasks.todo') ? 'bg-white text-black' : 'text-white hover:bg-white hover:text-black' }}">
             <i class="fas fa-list-ul"></i>
-            <span class="font-semibold">To-Do</span>
+            <span class="font-semibold">{{ __('app.todo') }}</span>
         </a>
         
         <a href="{{ route('profile.edit') }}" class="flex items-center space-x-3 p-3 rounded-lg transition duration-300 {{ request()->routeIs('profile.*') ? 'bg-white text-black' : 'text-white hover:bg-white hover:text-black' }}">
             <i class="fas fa-cog"></i>
-            <span class="font-semibold">Settings</span>
+            <span class="font-semibold">{{ __('app.settings') }}</span>
         </a>
     </div>
 
@@ -43,7 +48,7 @@
             @csrf
             <button type="submit" class="flex items-center space-x-3 p-3 w-full rounded-lg text-white hover:bg-red-600 transition duration-300">
                 <i class="fas fa-sign-out-alt"></i>
-                <span class="font-semibold">Logout</span>
+                <span class="font-semibold">{{ __('app.logout') }}</span>
             </button>
         </form>
     </div>
@@ -53,30 +58,35 @@
 <div class="lg:hidden bg-[#1c1c1c] shadow-sm shadow-gray-400 fixed top-0 left-0 w-full z-50">
     <div class="flex items-center justify-between p-4">
         <div>
-            <img src="{{ asset('images/fluency_logo_clean_final.png') }}" alt="Fluency Logo" class="w-[120px]" style="filter: brightness(0) invert(1);">
+            <img src="{{ asset('images/fluency_logo_clean_final.png') }}" alt="{{ __('app.fluency') }}" class="w-[120px]" style="filter: brightness(0) invert(1);">
         </div>
         <button id="mobileMenuButton" class="text-white text-2xl focus:outline-none">
             <i class="fas fa-bars"></i>
         </button>
     </div>
     <div id="mobileMenu" class="hidden flex-col p-6 space-y-4 bg-[#1c1c1c]">
+        <div class="flex gap-2 text-sm font-semibold text-gray-300">
+            <a href="{{ route('lang.switch', 'en') }}" class="{{ app()->getLocale() === 'en' ? 'text-white underline' : 'hover:text-white' }}">EN</a>
+            <span>|</span>
+            <a href="{{ route('lang.switch', 'fr') }}" class="{{ app()->getLocale() === 'fr' ? 'text-white underline' : 'hover:text-white' }}">FR</a>
+        </div>
         <ul class="flex-grow space-y-4">
             <li>
                 <a href="{{ route('dashboard') }}" class="flex items-center py-3 px-4 rounded-lg transition border border-gray-300 {{ request()->routeIs('dashboard') ? 'bg-white text-black' : 'text-gray-300 hover:bg-gray-800' }}">
                     <i class="fas fa-tachometer-alt text-lg mr-3"></i>
-                    <span class="font-medium">Dashboard</span>
+                    <span class="font-medium">{{ __('app.dashboard') }}</span>
                 </a>
             </li>
             <li>
                 <a href="{{ route('team.index') }}" class="flex items-center py-3 px-4 rounded-lg transition border border-gray-300 {{ request()->routeIs('team.index') ? 'bg-white text-black' : 'text-gray-300 hover:bg-gray-800' }}">
                     <i class="fas fa-users text-lg mr-3"></i>
-                    <span class="font-medium">Teams</span>
+                    <span class="font-medium">{{ __('app.teams') }}</span>
                 </a>
             </li>
             <li>
                 <a href="{{ route('calender.index') }}" class="flex items-center py-3 px-4 rounded-lg transition border border-gray-300 {{ request()->routeIs('calender.index') ? 'bg-white text-black' : 'text-gray-300 hover:bg-gray-800' }}">
                     <i class="fas fa-calendar-alt text-lg mr-3"></i>
-                    <span class="font-medium">Calendar</span>
+                    <span class="font-medium">{{ __('app.calendar') }}</span>
                 </a>
             </li>
         </ul>
@@ -84,7 +94,7 @@
             @csrf
             <button type="submit" class="flex items-center w-full py-3 px-4 rounded-lg transition duration-200 bg-red-600 text-white">
                 <i class="fas fa-sign-out-alt text-lg mr-3"></i>
-                <span class="font-medium">Logout</span>
+                <span class="font-medium">{{ __('app.logout') }}</span>
             </button>
         </form>
     </div>

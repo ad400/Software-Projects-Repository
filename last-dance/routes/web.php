@@ -15,6 +15,14 @@ Route::get('/glass-demo', function () {
     return view('glass_landing');
 });
 
+Route::get('/lang/{locale}', function (string $locale) {
+    abort_unless(in_array($locale, ['en', 'fr'], true), 404);
+
+    session(['locale' => $locale]);
+
+    return back();
+})->name('lang.switch');
+
 Route::get('/dashboard', [TeamController::class , 'index2'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Manager Dashboard</title>
+    <title>{{ __('app.task_status_overview') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -114,7 +114,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Do Section -->
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h2 class="text-2xl font-bold text-red-600 text-center mb-4">Do</h2>
+                    <h2 class="text-2xl font-bold text-red-600 text-center mb-4">{{ __('app.do') }}</h2>
                     <ul id="do-list" class="space-y-3">
                         @forelse ($tasks['Do'] ?? [] as $task)
                             <li class="p-4 rounded-lg shadow transition hover:shadow-lg draggable-task 
@@ -126,14 +126,14 @@
                                 <p class="text-sm text-gray-600 mt-1">{{ $task->description }}</p>
                             </li>
                         @empty
-                            <p class="text-gray-500 text-center">No tasks in this category.</p>
+                            <p class="text-gray-500 text-center">{{ __('app.no_tasks_category') }}</p>
                         @endforelse
                     </ul>
                 </div>
 
                 <!-- Doing Section -->
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h2 class="text-2xl font-bold text-yellow-600 text-center mb-4">Doing</h2>
+                    <h2 class="text-2xl font-bold text-yellow-600 text-center mb-4">{{ __('app.doing') }}</h2>
                     <ul id="doing-list" class="space-y-3">
                         @forelse ($tasks['Doing'] ?? [] as $task)
                             <li class="p-4 rounded-lg shadow transition hover:shadow-lg draggable-task 
@@ -145,14 +145,14 @@
                                 <p class="text-sm text-gray-600 mt-1">{{ $task->description }}</p>
                             </li>
                         @empty
-                            <p class="text-gray-500 text-center">No tasks in this category.</p>
+                            <p class="text-gray-500 text-center">{{ __('app.no_tasks_category') }}</p>
                         @endforelse
                     </ul>
                 </div>
 
                 <!-- Done Section -->
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h2 class="text-2xl font-bold text-green-600 text-center mb-4">Done</h2>
+                    <h2 class="text-2xl font-bold text-green-600 text-center mb-4">{{ __('app.done') }}</h2>
                     <ul id="done-list" class="space-y-3">
                         @forelse ($tasks['Done'] ?? [] as $task)
                             <li class="p-4 rounded-lg shadow transition hover:shadow-lg draggable-task 
@@ -164,7 +164,7 @@
                                 <p class="text-sm text-gray-600 mt-1">{{ $task->description }}</p>
                             </li>
                         @empty
-                            <p class="text-gray-500 text-center">No tasks in this category.</p>
+                            <p class="text-gray-500 text-center">{{ __('app.no_tasks_category') }}</p>
                         @endforelse
                     </ul>
                 </div>

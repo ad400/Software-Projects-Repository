@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <title>Fluency - Login & Register</title>
+    <title>{{ __('app.fluency_login_register') }}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
@@ -262,16 +262,16 @@
             @csrf
             <img src="{{ asset('images/fluency_logo_clean_final.png') }}" alt="Fluency" class="w-32 mb-4">
             
-            <input type="text" name="name" placeholder="Name" required />
+            <input type="text" name="name" placeholder="{{ __('app.name') }}" required />
             <x-input-error :messages="$errors->get('name')" class="mt-1" />
             
-            <input type="email" name="email" placeholder="Email" required />
+            <input type="email" name="email" placeholder="{{ __('app.email') }}" required />
             <x-input-error :messages="$errors->get('email')" class="mt-1" />
             
-            <input type="password" name="password" placeholder="Password" required />
+            <input type="password" name="password" placeholder="{{ __('app.password') }}" required />
             <x-input-error :messages="$errors->get('password')" class="mt-1" />
             
-            <input type="password" name="password_confirmation" placeholder="Confirm Password" required />
+            <input type="password" name="password_confirmation" placeholder="{{ __('app.confirm_password') }}" required />
             
             <!-- Profile Image Upload -->
             <div class="w-full text-left mt-2" x-data="{ photoName: null, photoPreview: null }">
@@ -296,12 +296,12 @@
                 <button type="button"
                     x-on:click.prevent="$refs.photo.click()"
                     class="w-full inline-flex items-center justify-center px-4 py-2 bg-white border border-gray-300 rounded-full font-bold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:bg-gray-50 hover:border-gray-400 transition duration-200">
-                    <span x-show="! photoName">Add your profile</span>
+                    <span x-show="! photoName">{{ __('app.add_profile') }}</span>
                     <span x-show="photoName" x-text="photoName" class="truncate max-w-[180px]"></span>
                 </button>
             </div>
 
-            <button type="submit" class="mt-4">Sign Up</button>
+            <button type="submit" class="mt-4">{{ __('app.sign_up') }}</button>
         </form>
     </div>
 
@@ -318,16 +318,16 @@
                 <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                 <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
             </div>
-            <span>or use your account</span>
+            <span>{{ __('app.or_use_account') }}</span>
             
-            <input type="email" name="email" placeholder="Email" value="{{ old('email') }}" required autofocus />
+            <input type="email" name="email" placeholder="{{ __('app.email') }}" value="{{ old('email') }}" required autofocus />
             <x-input-error :messages="$errors->get('email')" class="mt-1" />
             
-            <input type="password" name="password" placeholder="Password" required />
+            <input type="password" name="password" placeholder="{{ __('app.password') }}" required />
             <x-input-error :messages="$errors->get('password')" class="mt-1" />
             
-            <a href="{{ route('password.request') }}">Forgot your password?</a>
-            <button type="submit">Sign In</button>
+            <a href="{{ route('password.request') }}">{{ __('app.forgot_password') }}</a>
+            <button type="submit">{{ __('app.sign_in') }}</button>
         </form>
     </div>
 
@@ -336,15 +336,15 @@
         <div class="overlay">
             <div class="overlay-panel overlay-left">
                 <img src="{{ asset('storage/images/flymen.png') }}" class="illustration-img" alt="">
-                <h1>Welcome Back!</h1>
-                <p>To keep connected with us please login with your personal info</p>
-                <button class="ghost" id="signIn">Sign In</button>
+                <h1>{{ __('app.welcome_back') }}</h1>
+                <p>{{ __('app.welcome_back_description') }}</p>
+                <button class="ghost" id="signIn">{{ __('app.sign_in') }}</button>
             </div>
             <div class="overlay-panel overlay-right">
                 <img src="{{ asset('storage/images/flywmn.png') }}" class="illustration-img" alt="">
-                <h1>Hello, Friend!</h1>
-                <p>Enter your personal details and start journey with us</p>
-                <button class="ghost" id="signUp">Sign Up</button>
+                <h1>{{ __('app.hello_friend') }}</h1>
+                <p>{{ __('app.signup_description') }}</p>
+                <button class="ghost" id="signUp">{{ __('app.sign_up') }}</button>
             </div>
         </div>
     </div>

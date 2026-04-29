@@ -38,7 +38,7 @@
                                 reader.readAsDataURL($refs.photo.files[0]);
                         ">
 
-            <label class="block text-sm font-semibold text-gray-700 mb-2">Add your profile</label>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">{{ __('app.add_profile') }}</label>
 
             <!-- Upload Zone -->
             <div 
@@ -61,9 +61,9 @@
 
                 <!-- Text -->
                 <div class="flex-1 min-w-0">
-                    <p class="text-sm text-gray-400" x-show="! photoName">Click to upload a photo</p>
+                    <p class="text-sm text-gray-400" x-show="! photoName">{{ __('app.click_upload_photo') }}</p>
                     <p class="text-sm text-blue-400 truncate" x-show="photoName" x-text="photoName"></p>
-                    <p class="text-xs text-gray-600 mt-0.5">PNG, JPG, GIF up to 2MB</p>
+                    <p class="text-xs text-gray-600 mt-0.5">{{ __('app.png_jpg_gif_limit') }}</p>
                 </div>
 
                 <!-- Upload Icon -->

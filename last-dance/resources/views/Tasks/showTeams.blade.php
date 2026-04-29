@@ -244,19 +244,18 @@
                                 </button>
 
                                 <!-- Modal Header -->
-                                <h2 class="text-xl font-semibold text-blue-400 text-center mb-6">Invite Members</h2>
+                                <h2 class="text-xl font-semibold text-blue-400 text-center mb-6">{{ __('app.invite_members') }}</h2>
 
                                 <!-- Modal Content -->
                                 <form action="{{ route('invite.store', $team->id) }}" method="post" class="space-y-5">
                                     @csrf
                                     <!-- Email Input -->
                                     <div>
-                                        <label for="email" class="block text-sm font-medium text-gray-400 mb-1">Email
-                                            Address</label>
+                                        <label for="email" class="block text-sm font-medium text-gray-400 mb-1">{{ __('app.email') }}</label>
                                         <div class="relative mt-1">
                                             <input id="email" name="email" type="email" required
                                                 class="block w-full px-4 py-2 border border-gray-600 bg-gray-900 text-gray-200 rounded-lg shadow-sm focus:ring-blue-400 focus:border-blue-400 placeholder-gray-500"
-                                                placeholder="Enter member's email">
+                                                placeholder="{{ __('app.enter_member_email') }}">
                                         </div>
                                     </div>
 
@@ -265,11 +264,11 @@
                                         <button type="button"
                                             onclick="closeModal('modaleinvite{{ $team->id }}')"
                                             class="px-4 py-2 bg-gray-700 text-gray-200 rounded-md hover:bg-gray-600 transition">
-                                            Cancel
+                                            {{ __('app.cancel') }}
                                         </button>
                                         <button type="submit"
                                             class="px-4 py-2 bg-blue-600 text-white font-bold rounded-md hover:bg-blue-500 transition">
-                                            Send Invite
+                                            {{ __('app.send_invite') }}
                                         </button>
                                     </div>
                                 </form>
@@ -296,7 +295,7 @@
                                 </button>
 
                                 <!-- Modal Heading -->
-                                <h2 class="text-2xl font-bold text-center text-blue-400 mb-6">Create a New Task</h2>
+                                <h2 class="text-2xl font-bold text-center text-blue-400 mb-6">{{ __('app.create_new_task') }}</h2>
 
                                 <!-- Form for Creating a Task -->
                                 <form action="{{ route('task.store') }}" method="POST">
@@ -305,10 +304,10 @@
                                     <!-- Task Name -->
                                     <div class="mb-4">
                                         <label for="name"
-                                            class="block text-sm font-medium text-gray-400 mb-1">Task Name</label>
+                                            class="block text-sm font-medium text-gray-400 mb-1">{{ __('app.task_name') }}</label>
                                         <input type="text" name="name" id="name"
                                             class="w-full px-4 py-3 border border-gray-600 bg-gray-900 text-gray-200 rounded-md shadow-sm focus:ring-blue-400 focus:border-blue-400"
-                                            placeholder="Enter task name" required value="{{ old('name') }}">
+                                            placeholder="{{ __('app.enter_task_name') }}" required value="{{ old('name') }}">
                                         @error('name')
                                             <p class="text-red-400 text-sm mt-1">{{ $message }}</p>
                                         @enderror
@@ -317,10 +316,10 @@
                                     <!-- Description -->
                                     <div class="mb-4">
                                         <label for="description"
-                                            class="block text-sm font-medium text-gray-400 mb-1">Description</label>
+                                            class="block text-sm font-medium text-gray-400 mb-1">{{ __('app.description') }}</label>
                                         <textarea name="description" id="description" rows="4"
                                             class="w-full px-4 py-3 border border-gray-600 bg-gray-900 text-gray-200 rounded-md shadow-sm focus:ring-blue-400 focus:border-blue-400"
-                                            placeholder="Enter task description">{{ old('description') }}</textarea>
+                                            placeholder="{{ __('app.enter_task_description') }}">{{ old('description') }}</textarea>
                                         @error('description')
                                             <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                         @enderror
@@ -331,7 +330,7 @@
                                         <!-- Date Start -->
                                         <div>
                                             <label for="start"
-                                                class="block text-sm font-medium text-gray-400 mb-1">Date Start</label>
+                                                class="block text-sm font-medium text-gray-400 mb-1">{{ __('app.date_start') }}</label>
                                             <input type="datetime-local" id="start" name="start"
                                                 min="{{ date('Y-m-d\TH:i') }}"
                                                 class="w-full px-4 py-3 border border-gray-600 bg-gray-900 text-gray-200 rounded-md shadow-sm focus:ring-blue-400 focus:border-blue-400"
@@ -344,7 +343,7 @@
                                         <!-- Date End -->
                                         <div>
                                             <label for="end"
-                                                class="block text-sm font-medium text-gray-400 mb-1">Date End</label>
+                                                class="block text-sm font-medium text-gray-400 mb-1">{{ __('app.date_end') }}</label>
                                             <input type="datetime-local" id="end" name="end"
                                                 min="{{ date('Y-m-d\TH:i') }}"
                                                 class="w-full px-4 py-3 border border-gray-600 bg-gray-900 text-gray-200 rounded-md shadow-sm focus:ring-blue-400 focus:border-blue-400"
@@ -359,15 +358,15 @@
                                     <!-- Priority -->
                                     <div class="mb-4">
                                         <label for="priority"
-                                            class="block text-sm font-medium text-gray-400 mb-1">Priority</label>
+                                            class="block text-sm font-medium text-gray-400 mb-1">{{ __('app.priority') }}</label>
                                         <select name="priority" id="priority"
                                             class="w-full px-4 py-3 border border-gray-600 bg-gray-900 text-gray-200 rounded-md shadow-sm focus:ring-blue-400 focus:border-blue-400">
                                             <option value="High" {{ old('priority') == 'High' ? 'selected' : '' }}>
-                                                High</option>
+                                                {{ __('app.high') }}</option>
                                             <option value="Medium"
-                                                {{ old('priority') == 'Medium' ? 'selected' : '' }}>Medium</option>
+                                                {{ old('priority') == 'Medium' ? 'selected' : '' }}>{{ __('app.medium') }}</option>
                                             <option value="Low" {{ old('priority') == 'Low' ? 'selected' : '' }}>
-                                                Low</option>
+                                                {{ __('app.low') }}</option>
                                         </select>
                                         @error('priority')
                                             <p class="text-red-400 text-sm mt-1">{{ $message }}</p>
@@ -377,10 +376,10 @@
                                     <!-- Assign To -->
                                     <div class="mb-4">
                                         <label for="assigned_to"
-                                            class="block text-sm font-medium text-gray-400 mb-1">Assign to</label>
+                                            class="block text-sm font-medium text-gray-400 mb-1">{{ __('app.assign_to') }}</label>
                                         <select name="assigned_to" id="assigned_to"
                                             class="w-full px-4 py-3 border border-gray-600 bg-gray-900 text-gray-200 rounded-md shadow-sm focus:ring-blue-400 focus:border-blue-400">
-                                            <option value="">-- None --</option>
+                                            <option value="">{{ __('app.none') }}</option>
                                             @foreach ($team->members as $member)
                                                 <option value="{{ $member->id }}">{{ $member->name }}</option>
                                             @endforeach
@@ -393,11 +392,11 @@
                                         <button type="button"
                                             onclick="toggleModal('modaltask{{ $team->id }}', false)"
                                             class="text-white bg-gray-700 hover:bg-gray-600 px-5 py-2 rounded-lg shadow transition">
-                                            Cancel
+                                            {{ __('app.cancel') }}
                                         </button>
                                         <button type="submit"
                                             class="px-5 py-2 bg-blue-600 text-white font-bold rounded-lg shadow hover:bg-blue-500 transition">
-                                            Create Task
+                                            {{ __('app.create_task') }}
                                         </button>
                                     </div>
                                 </form>
@@ -427,10 +426,9 @@
 
 
                         <div>
-                            <p class="text-lg font-semibold">Oops! You’ve reached the maximum team limit.</p>
-                            <p class="mt-2 text-sm">To create more teams, please <a href="{{ route('subscribe') }}"
-                                    class="inline-block px-6 py-3 mt-4 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300">subscribe
-                                    now</a>.</p>
+                            <p class="text-lg font-semibold">{{ __('app.subscribe_limit_title') }}</p>
+                            <p class="mt-2 text-sm">{{ __('app.subscribe_limit_text') }} <a href="{{ route('subscribe') }}"
+                                    class="inline-block px-6 py-3 mt-4 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300">{{ __('app.subscribe_now') }}</a>.</p>
                         </div>
                     </div>
                 @endif

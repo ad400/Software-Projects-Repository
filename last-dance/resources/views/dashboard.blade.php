@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Management Dashboard</title>
+    <title>{{ __('app.welcome_dashboard') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -83,19 +83,19 @@
                 <!-- Statistics Section -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
                     <div class=" shadow-md shadow-gray-400 p-6 rounded-lg ">
-                        <h3 class="text-xl font-bold  ">Total Tasks</h3>
+                        <h3 class="text-xl font-bold  ">{{ __('app.all_tasks_count') }}</h3>
                         <p class="text-3xl font-bold text-blue-500">{{ $allTasks }} </p>
-                        <p class="text-sm ">All tasks in the system.</p>
+                        <p class="text-sm ">{{ __('app.all_tasks_description') }}</p>
                     </div>
                     <div class="shadow-md shadow-gray-400 p-6 rounded-lg ">
-                        <h3 class="text-xl font-bold ">Completed Tasks</h3>
+                        <h3 class="text-xl font-bold ">{{ __('app.completed_tasks') }}</h3>
                         <p class="text-3xl font-bold text-green-500">{{ $totalDone }}</p>
-                        <p class="text-sm ">Tasks successfully completed.</p>
+                        <p class="text-sm ">{{ __('app.completed_tasks_description') }}</p>
                     </div>
                     <div class="shadow-md shadow-gray-400 p-6 rounded-lg ">
-                        <h3 class="text-xl font-bold ">Pending Tasks</h3>
+                        <h3 class="text-xl font-bold ">{{ __('app.pending_tasks') }}</h3>
                         <p class="text-3xl font-bold text-yellow-500">{{ $totalDoing }}</p>
-                        <p class="text-sm ">Tasks waiting to be processed.</p>
+                        <p class="text-sm ">{{ __('app.pending_tasks_description') }}</p>
                     </div>
                 </div>
 
@@ -104,8 +104,8 @@
 
                 <!-- Chart Section (Placeholder for future chart integration) -->
                 <div class="border border-gray-200 p-6 mt-8 rounded-lg shadow-lg shadow-gray-300">
-                    <h3 class="text-xl font-semibold ">Task Status Overview</h3>
-                    <p class="text-sm text-gray-700 mt-2">A summary of your task progress and status over the week.</p>
+                    <h3 class="text-xl font-semibold ">{{ __('app.task_status_overview') }}</h3>
+                    <p class="text-sm text-gray-700 mt-2">{{ __('app.task_status_summary') }}</p>
 
                     <!-- Chart Container -->
                     <div class="w-full p-2 h-64 bg-white mt-6 rounded-lg flex items-center justify-center">
@@ -115,7 +115,7 @@
 
                     <!-- Weekly Progress Section -->
                     <div class="mt-6 bg-white p-4 rounded-lg shadow-md">
-                        <h4 class="text-lg font-medium text-black">Weekly Progress</h4>
+                        <h4 class="text-lg font-medium text-black">{{ __('app.weekly_progress') }}</h4>
                         <div class="mt-4 h-48">
                             <canvas id="weeklyProgressChart"></canvas>
                         </div>
@@ -128,28 +128,28 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
                     <div class=" bg-blue-500 text-white p-6 rounded-lg shadow-md hover:bg-blue-600 cursor-pointer">
-                        <h3 class="text-xl font-semibold">Create Task</h3>
-                        <p class="text-sm mt-2">Quickly add a new task to the system.</p>
+                        <h3 class="text-xl font-semibold">{{ __('app.create_task') }}</h3>
+                        <p class="text-sm mt-2">{{ __('app.create_task_description') }}</p>
                     </div>
                     <div class=" bg-green-500 text-white p-6 rounded-lg shadow-md hover:bg-green-600 cursor-pointer">
-                        <h3 class="text-xl font-semibold">Manage Teams</h3>
-                        <p class="text-sm mt-2">View and manage your team members.</p>
+                        <h3 class="text-xl font-semibold">{{ __('app.manage_teams') }}</h3>
+                        <p class="text-sm mt-2">{{ __('app.manage_teams_description') }}</p>
                     </div>
                     <div class=" bg-yellow-500 text-white p-6 rounded-lg shadow-md hover:bg-yellow-600 cursor-pointer">
-                        <h3 class="text-xl font-semibold">View Reports</h3>
-                        <p class="text-sm mt-2">Generate and view task progress reports.</p>
+                        <h3 class="text-xl font-semibold">{{ __('app.reports') }}</h3>
+                        <p class="text-sm mt-2">{{ __('app.reports_description') }}</p>
                     </div>
                 </div>
 
 
                 <!-- User Information Section -->
                 <div class="bg-black p-6 mt-8 rounded-lg shadow-sm shadow-gray-400">
-                    <h3 class="text-xl font-semibold text-gray-100">User Information</h3>
+                    <h3 class="text-xl font-semibold text-gray-100">{{ __('app.user_information') }}</h3>
                     <div class="flex items-center mt-4">
                         <div
                             class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden flex justify-center items-center text-white text-2xl">
                             <img id="profile-image" class="w-full h-full rounded-full cursor-pointer object-cover object-center"
-                                src="{{ $user->image ? asset('storage/' . (str_contains($user->image, '/') ? $user->image : 'images/' . $user->image)) : 'https://ui-avatars.com/api/?name=' . urlencode($user->name) . '&color=7F9CF5&background=EBF4FF' }}" alt="Profile Image">
+                                src="{{ $user->image ? asset('storage/' . (str_contains($user->image, '/') ? $user->image : 'images/' . $user->image)) : 'https://ui-avatars.com/api/?name=' . urlencode($user->name) . '&color=7F9CF5&background=EBF4FF' }}" alt="{{ __('app.profile_image') }}">
 
                         </div>
                         <div class="ml-4">

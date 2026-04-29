@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Team Invitation</title>
+    <title>{{ __('app.team_invitation') }}</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -80,8 +80,8 @@
 
         <!-- Body -->
         <div class="email-body">
-            <h1 style="font-size: 22px; color: #446fcc; margin-bottom: 10px;">You have been invited to join a team!</h1>
-            <p>Hello,</p>
+            <h1 style="font-size: 22px; color: #446fcc; margin-bottom: 10px;">{{ __('app.invitation_subject_title') }}</h1>
+            <p>{{ __('app.hello') }}</p>
             <p>
                 You have been invited to join the team 
                 <strong>{{ optional($invitation->team)->name ?? 'Unknown Team' }}</strong>.
@@ -90,10 +90,10 @@
                 Click below to respond to the invitation:
             </p>
             <div style="text-align: center;">
-                <a href="{{ $acceptUrl }}" class="button">Accept Invitation</a>
-                <a href="{{ $rejectUrl }}" class="button reject">Reject Invitation</a>
+                <a href="{{ $acceptUrl }}" class="button">{{ __('app.accept_invitation') }}</a>
+                <a href="{{ $rejectUrl }}" class="button reject">{{ __('app.reject_invitation') }}</a>
             </div>
-            <p>If you were not expecting this email, please disregard it.</p>
+            <p>{{ __('app.invitation_disregard') }}</p>
         </div>
 
         <!-- Footer -->

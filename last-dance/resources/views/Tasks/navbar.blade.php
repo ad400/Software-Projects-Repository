@@ -3,13 +3,13 @@
         
         <!-- Logo -->
         <div class="flex items-center space-x-2">
-            <img src="{{ asset('images/fluency_logo_clean_final.png') }}" alt="Fluency Logo" class="w-12 h-12 object-contain">
+            <img src="{{ asset('images/fluency_logo_clean_final.png') }}" alt="{{ __('app.fluency') }}" class="w-12 h-12 object-contain">
         </div>
         
         <!-- Search Input -->
         <div class="hidden md:flex flex-1 mx-6">
             <div class="relative w-full">
-                <input type="text" placeholder="Search..."
+                <input type="text" placeholder="{{ __('app.search') }}"
                     class="w-full px-4 py-2 rounded-full text-sm text-gray-700 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
                 <span class="absolute inset-y-0 right-4 flex items-center">
                     <i class="fas fa-search text-gray-400"></i>
@@ -36,6 +36,11 @@
             </div>
             <div class="text-gray-700">
                 <span class="text-sm font-medium">{{ $authUser->name }}</span>
+            </div>
+            <div class="flex items-center gap-1 text-sm font-semibold text-gray-600">
+                <a href="{{ route('lang.switch', 'en') }}" class="{{ app()->getLocale() === 'en' ? 'text-blue-600' : 'hover:text-blue-600' }}">EN</a>
+                <span>|</span>
+                <a href="{{ route('lang.switch', 'fr') }}" class="{{ app()->getLocale() === 'fr' ? 'text-blue-600' : 'hover:text-blue-600' }}">FR</a>
             </div>
         </div>
 

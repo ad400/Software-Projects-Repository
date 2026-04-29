@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Task Management</title>
+    <title>{{ __('app.task_status_overview') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
@@ -96,18 +96,18 @@
 
             <!-- Team Tasks -->
             <div class="container shadow-lg bg-white rounded-lg mb-6 overflow-x-auto">
-                <h2 class="text-2xl font-bold mb-4 p-2 text-center">Team Tasks</h2>
+                <h2 class="text-2xl font-bold mb-4 p-2 text-center">{{ __('app.team_tasks') }}</h2>
                 <table class="min-w-full table-auto divide-y divide-gray-300 text-sm">
                     <thead class="bg-gray-800 text-white">
                         <tr>
-                            <th class="px-6 py-3">Task Name</th>
-                            <th class="px-6 py-3">Deadline</th>
-                            <th class="px-6 py-3">Priority</th>
-                            <th class="px-6 py-3">Status</th>
-                            <th class="px-6 py-3">Creator</th>
-                            <th class="px-6 py-3">Assigned To</th>
-                            <th class="px-6 py-3">Team</th>
-                            <th class="px-6 py-3 text-center">Actions</th>
+                            <th class="px-6 py-3">{{ __('app.task_name') }}</th>
+                            <th class="px-6 py-3">{{ __('app.deadline') }}</th>
+                            <th class="px-6 py-3">{{ __('app.priority') }}</th>
+                            <th class="px-6 py-3">{{ __('app.status') }}</th>
+                            <th class="px-6 py-3">{{ __('app.creator') }}</th>
+                            <th class="px-6 py-3">{{ __('app.assigned_to') }}</th>
+                            <th class="px-6 py-3">{{ __('app.team') }}</th>
+                            <th class="px-6 py-3 text-center">{{ __('app.actions') }}</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200">
@@ -164,16 +164,16 @@
 
             <!-- My Own Tasks -->
             <div class="container shadow-lg bg-white rounded-lg overflow-x-auto">
-                <h2 class="text-2xl font-bold mb-4 p-2 text-center">My Own Tasks</h2>
+                <h2 class="text-2xl font-bold mb-4 p-2 text-center">{{ __('app.my_own_tasks') }}</h2>
                 <table class="min-w-full table-auto divide-y divide-gray-300 text-sm">
                     <thead class="bg-gray-800 text-white">
                         <tr>
-                            <th class="px-6 py-3">Task Name</th>
-                            <th class="px-6 py-3">Deadline</th>
-                            <th class="px-6 py-3">Priority</th>
-                            <th class="px-6 py-3">Status</th>
-                            <th class="px-6 py-3">Creator</th>
-                            <th class="px-6 py-3 text-center">Actions</th>
+                            <th class="px-6 py-3">{{ __('app.task_name') }}</th>
+                            <th class="px-6 py-3">{{ __('app.deadline') }}</th>
+                            <th class="px-6 py-3">{{ __('app.priority') }}</th>
+                            <th class="px-6 py-3">{{ __('app.status') }}</th>
+                            <th class="px-6 py-3">{{ __('app.creator') }}</th>
+                            <th class="px-6 py-3 text-center">{{ __('app.actions') }}</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200">

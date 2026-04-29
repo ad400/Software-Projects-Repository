@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <title>Create Team</title>
+    <title>{{ __('app.create_team') }}</title>
     <style>
         body.overflow-hidden {
             overflow: hidden;
@@ -36,7 +36,7 @@
             </button>
 
             <!-- Modal Heading -->
-            <h2 class="text-2xl font-bold text-center text-blue-400 mb-6">Create a New Team</h2>
+            <h2 class="text-2xl font-bold text-center text-blue-400 mb-6">{{ __('app.create_new_team') }}</h2>
 
             <!-- Form for Creating a Team -->
             <form action="{{ route('team.store') }}" method="POST">
@@ -44,10 +44,10 @@
 
                 <!-- Team Name -->
                 <div class="mb-4">
-                    <label for="name" class="block text-sm font-medium text-gray-400 mb-1">Team Name</label>
+                    <label for="name" class="block text-sm font-medium text-gray-400 mb-1">{{ __('app.team_name') }}</label>
                     <input type="text" name="name" id="name"
                         class="w-full px-4 py-3 border border-gray-600 bg-gray-900 text-gray-200 rounded-md shadow-sm focus:ring-blue-400 focus:border-blue-400"
-                        placeholder="Enter team name" required>
+                        placeholder="{{ __('app.enter_team_name') }}" required>
                     @error('name')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                     @enderror
@@ -55,10 +55,10 @@
 
                 <!-- Team Description -->
                 <div class="mb-4">
-                    <label for="description" class="block text-sm font-medium text-gray-400 mb-1">Description</label>
+                    <label for="description" class="block text-sm font-medium text-gray-400 mb-1">{{ __('app.description') }}</label>
                     <textarea name="description" id="description" rows="4"
                         class="w-full px-4 py-3 border border-gray-600 bg-gray-900 text-gray-200 rounded-md shadow-sm focus:ring-blue-400 focus:border-blue-400"
-                        placeholder="Describe your team (optional)"></textarea>
+                        placeholder="{{ __('app.enter_team_description') }}"></textarea>
                     @error('description')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                     @enderror

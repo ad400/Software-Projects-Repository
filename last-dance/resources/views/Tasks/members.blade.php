@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <title>Team Members</title>
+    <title>{{ __('app.team_members') }}</title>
 </head>
 
 <body class="min-h-screen bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 text-gray-800">
@@ -24,8 +24,8 @@
 
             <!-- Page Title -->
             <div class="text-center mb-8">
-                <h2 class="text-4xl font-bold text-gray-700 tracking-wide">Team Members</h2>
-                <p class="text-lg text-gray-600">Manage and view members of each team</p>
+                <h2 class="text-4xl font-bold text-gray-700 tracking-wide">{{ __('app.team_members') }}</h2>
+                <p class="text-lg text-gray-600">{{ __('app.team_members_description') }}</p>
             </div>
 
             <!-- Teams -->
@@ -49,7 +49,7 @@
                                             class="w-20 h-20 rounded-full border-4 border-blue-600 shadow-lg mb-4">
 
                                         <h4 class="text-xl font-semibold text-gray-800">{{ $member->name }}</h4>
-                                        <p class="text-sm text-gray-600 mt-2">Role: Member</p>
+                                        <p class="text-sm text-gray-600 mt-2">{{ __('app.role_member') }}</p>
 
                                         <!-- Kick Button -->
                                         <form

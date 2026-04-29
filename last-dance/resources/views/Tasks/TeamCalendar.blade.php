@@ -20,7 +20,7 @@
             document.body.classList.remove('overflow-hidden');
         };
     </script>
-    <title>Document</title>
+    <title>{{ __('app.fluency') }}</title>
 </head>
 
 <body class="bg-[#1c1c1c]">
