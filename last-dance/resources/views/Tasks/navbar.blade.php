@@ -23,12 +23,13 @@
         <!-- User Profile -->
         <div class="flex items-center space-x-4">
             <div class="relative">
-                <img id="profile-image" class="w-10 h-10 rounded-full border border-black border-2 cursor-pointer"
-                    src="{{ asset('storage/images/' . $user->image) }}" alt="Profile Image">
+                <img id="profile-image" class="w-10 h-10 rounded-full border border-black border-2 cursor-pointer object-cover"
+                    src="{{ Auth::user()->image ? asset('storage/' . Auth::user()->image) : 'https://ui-avatars.com/api/?name=' . urlencode(Auth::user()->name) . '&color=7F9CF5&background=EBF4FF' }}" 
+                    alt="{{ Auth::user()->name }}">
                 <span class="absolute top-0 right-0 w-3 h-3 bg-blue-500 border-2 border-white rounded-full"></span>
             </div>
             <div class="text-gray-700">
-                <span class="text-sm font-medium">{{ $user->name }}</span>
+                <span class="text-sm font-medium">{{ Auth::user()->name }}</span>
             </div>
         </div>
 
