@@ -13,9 +13,48 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="space-y-6">
+    <form method="post" action="{{ route('profile.update') }}" class="space-y-6" enctype="multipart/form-data">
         @csrf
         @method('patch')
+
+        <!-- Profile Image -->
+        <div x-data="{ photoName: null, photoPreview: null }" class="col-span-6 sm:col-span-4">
+            <!-- Profile Photo File Input -->
+            <input type="file" class="hidden"
+                        x-ref="photo"
+                        name="image"
+                        x-on:change="
+                                photoName = $refs.photo.files[0].name;
+                                const reader = new FileReader();
+                                reader.onload = (e) => {
+                                    photoPreview = e.target.result;
+                                };
+                                reader.readAsDataURL($refs.photo.files[0]);
+                        ">
+
+            <x-input-label for="photo" value="{{ __('Photo') }}" />
+
+            <!-- Current Profile Photo -->
+            <div class="mt-2" x-show="! photoPreview">
+                <img src="{{ $user->image ? asset('storage/' . $user->image) : 'https://ui-avatars.com/api/?name=' . urlencode($user->name) . '&color=7F9CF5&background=EBF4FF' }}" 
+                     alt="{{ $user->name }}" 
+                     class="rounded-full h-20 w-20 object-cover shadow-lg border-2 border-gray-200">
+            </div>
+
+            <!-- New Profile Photo Preview -->
+            <div class="mt-2" x-show="photoPreview" style="display: none;">
+                <span class="block rounded-full w-20 h-20 bg-cover bg-no-repeat bg-center shadow-lg border-2 border-blue-500"
+                      x-bind:style="'background-image: url(\'' + photoPreview + '\');'">
+                </span>
+            </div>
+
+            <button type="button" class="mt-2 inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:ring focus:ring-blue-200 active:text-gray-800 active:bg-gray-50 disabled:opacity-25 transition" 
+                    x-on:click.prevent="$refs.photo.click()">
+                {{ __('Select A New Photo') }}
+            </button>
+
+            <x-input-error class="mt-2" :messages="$errors->get('image')" />
+        </div>
 
         <!-- Name Input -->
         <div>
