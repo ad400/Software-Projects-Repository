@@ -259,33 +259,21 @@
                         reader.readAsDataURL($refs.photo.files[0]);
                     ">
 
-                <label class="block text-xs font-semibold text-gray-500 mb-1">Add your profile</label>
+                <label class="block text-xs font-semibold text-gray-500 mb-2">Add your profile</label>
 
-                <div class="flex items-center gap-3 px-3 py-2 bg-[#f9f9f9] border border-[#e1e1e1] rounded-lg cursor-pointer hover:border-[#1c1c1c] transition duration-200"
-                    x-on:click="$refs.photo.click()">
-
-                    <!-- Avatar Preview -->
-                    <div class="flex-shrink-0">
-                        <div x-show="! photoPreview" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
-                            <i class="fas fa-user text-gray-400 text-lg"></i>
-                        </div>
-                        <div x-show="photoPreview" style="display: none;">
-                            <span class="block w-10 h-10 rounded-full bg-cover bg-no-repeat bg-center border-2 border-[#1c1c1c]"
-                                  x-bind:style="'background-image: url(\'' + photoPreview + '\');'">
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Text -->
-                    <div class="flex-1 min-w-0">
-                        <p class="text-xs text-gray-400" x-show="! photoName">Click to upload a photo</p>
-                        <p class="text-xs text-gray-700 truncate font-medium" x-show="photoName" x-text="photoName"></p>
-                        <p class="text-xs text-gray-400">PNG, JPG, GIF up to 2MB</p>
-                    </div>
-
-                    <!-- Camera Icon -->
-                    <i class="fas fa-camera text-gray-400"></i>
+                <!-- Preview -->
+                <div x-show="photoPreview" style="display:none;" class="mb-2 flex justify-center">
+                    <span class="block w-14 h-14 rounded-full bg-cover bg-no-repeat bg-center border-2 border-[#1c1c1c]"
+                          x-bind:style="'background-image: url(\'' + photoPreview + '\');'">
+                    </span>
                 </div>
+
+                <button type="button"
+                    x-on:click.prevent="$refs.photo.click()"
+                    class="w-full inline-flex items-center justify-center px-4 py-2 bg-white border border-gray-300 rounded-full font-bold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:bg-gray-50 hover:border-gray-400 transition duration-200">
+                    <span x-show="! photoName">Add your profile</span>
+                    <span x-show="photoName" x-text="photoName" class="truncate max-w-[180px]"></span>
+                </button>
             </div>
 
             <button type="submit" class="mt-4">Sign Up</button>
