@@ -233,7 +233,7 @@
     <div class="form-container sign-up-container">
         <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
             @csrf
-            <img src="{{ asset('storage/images/image-removebg-preview.png') }}" alt="Fluency" class="w-32 mb-4">
+            <img src="{{ asset('storage/images/fluency_logo_black.png') }}" alt="Fluency" class="w-32 mb-4">
             
             <input type="text" name="name" placeholder="Name" value="{{ old('name') }}" required />
             <x-input-error :messages="$errors->get('name')" class="mt-1" />
@@ -284,7 +284,7 @@
     <div class="form-container sign-in-container">
         <form method="POST" action="{{ route('login') }}">
             @csrf
-            <img src="{{ asset('storage/images/image-removebg-preview.png') }}" alt="Fluency" class="w-32 mb-4">
+            <img src="{{ asset('storage/images/fluency_logo_black.png') }}" alt="Fluency" class="w-32 mb-4">
             
             <div class="social-container">
                 <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
